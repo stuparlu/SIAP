@@ -1,4 +1,4 @@
-from sklearn.naive_bayes import GaussianNB
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from sklearn.preprocessing import LabelEncoder
@@ -67,9 +67,8 @@ print(X_train_dropped.keys())
 X_test_dropped = X_test.dropna()
 y_test_dropped = y_test[X_test.index.isin(X_test_dropped.index)]
 
+clf = RandomForestClassifier()
 
-# Train the model
-clf = GaussianNB()
 clf.fit(X_train_dropped, y_train_dropped)
 
 # Make predictions
