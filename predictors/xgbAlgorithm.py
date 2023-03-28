@@ -1,32 +1,20 @@
 import xgboost as xgb
 from sklearn.metrics import classification_report
 from sklearn.preprocessing import LabelEncoder
-from sklearn.model_selection import train_test_split
+from utils.DataSplitter import DataSplitter
 
+X_train, X_test, Y_train, Y_test = DataSplitter().get_splitted_data()
 
-
-from utils.DataLoader import DataLoader
-
-joinedData = DataLoader().get_data()
-
-X = joinedData.drop(columns=['state'])
-y = joinedData['state']
 encoder = LabelEncoder()
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.1, random_state=0)
-X_train_dropped = X_train.dropna()
-y_train_dropped = y_train[X_train.index.isin(X_train_dropped.index)]
-X_test_dropped = X_test.dropna()
-y_test_dropped = y_test[X_test.index.isin(X_test_dropped.index)]
-y_train_encoded = encoder.fit_transform(y_train_dropped)
-y_test_encoded = encoder.transform(y_test_dropped)
+Y_train = encoder.fit_transform(Y_train)
+Y_test = encoder.transform(Y_test)
 
 clf = xgb.XGBClassifier()
-clf.fit(X_train_dropped, y_train_encoded)
+clf.fit(X_train, Y_train)
 
-# Make predictions
-y_pred_encoded = clf.predict(X_test_dropped)
-y_pred = encoder.inverse_transform(y_pred_encoded)
+Y_pred = clf.predict(X_test)
+Y_pred = encoder.inverse_transform(Y_pred)
+Y_test = encoder.inverse_transform(Y_test)
 
 # Print the classification report
-print(classification_report(y_test_dropped, y_pred, zero_division=1))
+print(classification_report(Y_test, Y_pred, zero_division=1))
