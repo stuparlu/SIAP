@@ -2,6 +2,7 @@ import xgboost as xgb
 from sklearn.metrics import classification_report
 from sklearn.preprocessing import LabelEncoder
 from utils.DataSplitter import DataSplitter
+import matplotlib.pyplot as plt
 
 X_train, X_test, Y_train, Y_test = DataSplitter().get_splitted_data()
 
@@ -18,3 +19,6 @@ Y_test = encoder.inverse_transform(Y_test)
 
 # Print the classification report
 print(classification_report(Y_test, Y_pred, zero_division=1))
+
+xgb.plot_importance(clf, max_num_features=20)
+plt.show()

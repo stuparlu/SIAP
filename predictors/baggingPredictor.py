@@ -1,6 +1,8 @@
 from sklearn import svm
+from sklearn.ensemble import BaggingClassifier
 from sklearn.metrics import classification_report
 from sklearn import preprocessing
+
 from utils.DataSplitter import DataSplitter
 
 X_train, X_test, Y_train, Y_test = DataSplitter().get_splitted_data()
@@ -8,7 +10,7 @@ X_train, X_test, Y_train, Y_test = DataSplitter().get_splitted_data()
 X_train = preprocessing.scale(X_train)
 X_test = preprocessing.scale(X_test)
 
-clf = svm.SVC(kernel='linear')
+clf = BaggingClassifier(estimator=svm.SVC(kernel='linear'))
 clf.fit(X_train, Y_train)
 
 Y_pred = clf.predict(X_test)
