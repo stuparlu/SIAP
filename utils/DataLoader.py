@@ -14,9 +14,9 @@ def calculate_ratio(imageCount, textLength):
 class DataLoader(object):
     def __init__(self):
         pass
-    def get_data():
+    def get_data(self):
         # Load the data
-        mainData = pd.read_csv('refinedDataSet.csv', index_col=False)
+        mainData = pd.read_csv('../files/refinedDataSet.csv', index_col=False)
 
         joinedData = mainData
         joinedData.drop(joinedData[joinedData['state'] == 'canceled'].index, inplace=True)
@@ -28,9 +28,6 @@ class DataLoader(object):
         joinedData["textReadingEase"] = joinedData['textDescription'].apply(calculate_ease)
         joinedData['imageTextRatio'] = joinedData.apply(
             lambda row: calculate_ratio(row['descriptionMediaNumber'], row['textLength']), axis=1)
-        # print(joinedData['imageTextRatio'].values)
-        # print(joinedData["textReadingEase"].values)
-
         # Drop text columns
         joinedData = joinedData.drop(columns=['name', 'textDescription'])
 
