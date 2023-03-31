@@ -3,7 +3,7 @@ import pandas as pd
 
 processedData = []
 
-with open("../files/titles.json", "r", encoding='utf-8') as processedTitles:
+with open("../files/joinedTitles.json", "r", encoding='utf-8') as processedTitles:
     data = json.load(processedTitles)
     for project in data:
         if project.get("processed") is True:
