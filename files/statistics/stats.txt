@@ -1,0 +1,88 @@
+Project categories: ['Food', 'Publishing', 'Journalism', 'Fashion', 'Design', 'Crafts', 'Art', 'Dance', 'Comics', 'Technology', 'Theater', 'Photography', 'Film & Video', 'Games', 'Music']
+--------------------------------------------------
+Project count by category:
+Food: 116
+Publishing: 172
+Journalism: 18
+Fashion: 116
+Design: 116
+Crafts: 36
+Art: 169
+Dance: 22
+Comics: 58
+Technology: 130
+Theater: 59
+Photography: 63
+Film & Video: 307
+Games: 171
+Music: 263
+--------------------------------------------------
+Project states: ['successful', 'failed']
+--------------------------------------------------
+Project count by state:
+successful: 750
+failed: 1066
+--------------------------------------------------
+Stats for goal:
+--------------------------------------------------
+Mean value: 31973.06178414097
+Median value: 5000.0
+Standard deviation value: 273070.55250344746
+Minimum value: 1.0
+Maximum value: 10000000.0
+Variance value: 74567526644.53804
+--------------------------------------------------
+Stats for videoLength:
+--------------------------------------------------
+Mean value: 66.47136563876651
+Median value: 0.0
+Standard deviation value: 126.28907438530932
+Minimum value: 0
+Maximum value: 1588
+Variance value: 15948.930309098192
+--------------------------------------------------
+Stats for descriptionMediaNumber:
+--------------------------------------------------
+Mean value: 6.429515418502203
+Median value: 1.0
+Standard deviation value: 11.896777765326133
+Minimum value: 0
+Maximum value: 173
+Variance value: 141.53332119755828
+--------------------------------------------------
+Stats for textLength:
+--------------------------------------------------
+Mean value: 4129.469162995595
+Median value: 2901.5
+Standard deviation value: 3743.5629142185476
+Minimum value: 188
+Maximum value: 32919
+Variance value: 14014263.292712465
+--------------------------------------------------
+Stats for textReadingEase:
+--------------------------------------------------
+Mean value: 66.20289647577093
+Median value: 67.35
+Standard deviation value: 10.407074076533513
+Minimum value: -50.84
+Maximum value: 94.15
+Variance value: 108.3071908344559
+--------------------------------------------------
+Stats for imageTextRatio:
+--------------------------------------------------
+Mean value: 537.4673068127181
+Median value: 183.8312020460358
+Standard deviation value: 973.5120536953717
+Minimum value: 0.0
+Maximum value: 11006.0
+Variance value: 947725.7186901802
+--------------------------------------------------
+Stats for projectDuration:
+--------------------------------------------------
+Mean value: 33.242290748898675
+Median value: 29.0
+Standard deviation value: 12.641603275382748
+Minimum value: 0
+Maximum value: 90
+Variance value: 159.81013337216783
+--------------------------------------------------

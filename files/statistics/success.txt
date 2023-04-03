@@ -1,0 +1,87 @@
+Project categories: ['Photography', 'Art', 'Crafts', 'Design', 'Publishing', 'Dance', 'Journalism', 'Technology', 'Comics', 'Games', 'Film & Video', 'Food', 'Theater', 'Music', 'Fashion']
+--------------------------------------------------
+Project count by category:
+Photography: 23
+Art: 72
+Crafts: 11
+Design: 43
+Publishing: 67
+Dance: 14
+Journalism: 4
+Technology: 36
+Comics: 31
+Games: 78
+Film & Video: 117
+Food: 38
+Theater: 38
+Music: 140
+Fashion: 38
+--------------------------------------------------
+Project states: ['successful']
+--------------------------------------------------
+Project count by state:
+successful: 750
+--------------------------------------------------
+Stats for goal:
+--------------------------------------------------
+Mean value: 10048.21096
+Median value: 3876.0
+Standard deviation value: 26250.50253373915
+Minimum value: 1.0
+Maximum value: 400000.0
+Variance value: 689088883.2738456
+--------------------------------------------------
+Stats for videoLength:
+--------------------------------------------------
+Mean value: 0.0
+Median value: 0.0
+Standard deviation value: 0.0
+Minimum value: 0
+Maximum value: 0
+Variance value: 0.0
+--------------------------------------------------
+Stats for descriptionMediaNumber:
+--------------------------------------------------
+Mean value: 8.266666666666667
+Median value: 3.0
+Standard deviation value: 13.3558999062323
+Minimum value: 0
+Maximum value: 115
+Variance value: 178.38006230529598
+--------------------------------------------------
+Stats for textLength:
+--------------------------------------------------
+Mean value: 4790.676
+Median value: 3462.5
+Standard deviation value: 3952.1388011001777
+Minimum value: 359
+Maximum value: 26520
+Variance value: 15619401.103161551
+--------------------------------------------------
+Stats for textReadingEase:
+--------------------------------------------------
+Mean value: 66.29608
+Median value: 67.08
+Standard deviation value: 9.742465568191479
+Minimum value: 25.87
+Maximum value: 94.15
+Variance value: 94.91563534739653
+--------------------------------------------------
+Stats for imageTextRatio:
+--------------------------------------------------
+Mean value: 657.2339180098668
+Median value: 302.325641025641
+Standard deviation value: 1117.9103445574635
+Minimum value: 0.0
+Maximum value: 10709.0
+Variance value: 1249723.538468587
+--------------------------------------------------
+Stats for projectDuration:
+--------------------------------------------------
+Mean value: 31.526666666666667
+Median value: 29.0
+Standard deviation value: 11.729310487900998
+Minimum value: 5
+Maximum value: 90
+Variance value: 137.57672452158434
+--------------------------------------------------

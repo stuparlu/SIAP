@@ -40,13 +40,6 @@ class DataLoader(object):
             lambda row: calculate_ratio(row['descriptionMediaNumber'], row['textLength']), axis=1)
         joinedData['projectDuration'] = joinedData.apply(
             lambda row: calculate_project_duration(row['deadline'], row['launched']), axis=1)
-        # Drop text columns
-        # Encode categorical variables
-        categorical_cols = ['category', 'main_category', 'currency', 'country']
-        for col in categorical_cols:
-            encoder = LabelEncoder()
-            joinedData[col] = encoder.fit_transform(joinedData[col])
-
         joinedData['launched'] = joinedData['launched'].apply(
             lambda x: int(time.mktime(time.strptime(x, '%Y-%m-%d %H:%M:%S'))))
         joinedData['deadline'] = joinedData['deadline'].apply(lambda x: int(time.mktime(time.strptime(x, '%Y-%m-%d'))))

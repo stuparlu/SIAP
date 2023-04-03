@@ -1,4 +1,3 @@
-from sklearn.inspection import permutation_importance
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import classification_report
 from utils.DataSplitter import DataSplitter
