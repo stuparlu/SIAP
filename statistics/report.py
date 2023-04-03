@@ -42,3 +42,8 @@ for value in numerical_values:
     print(f"Variance value: {mainData[value].var()}")
     # print(f"Mode value: {mainData[value].mode()}")
     print(50*'-')
+
+
+print(f"Text reading ease lower than threshold count: {(mainData['textReadingEase'] < 25).sum()}")
+print(f"Text length lower than threshold project count: {(mainData['textLength'] < 300).sum()}")
+print(f"Project duration lower than threshold project count: {(mainData['projectDuration'] < 5).sum()}")
