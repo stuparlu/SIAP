@@ -6,6 +6,8 @@ import pandas as pd
 
 def transform_description(description):
     return description.replace("\n", "").replace("\r", "")
+
+
 def calculate_ease(description):
     return textstat.flesch_reading_ease(description);
 def calculate_ratio(imageCount, textLength):
@@ -26,12 +28,16 @@ class DataLoader(object):
         # Load the data
         mainData = pd.read_csv('../files/refinedDataSet.csv', index_col=False)
 
+
         joinedData = mainData
         joinedData.drop(joinedData[joinedData['state'] == 'canceled'].index, inplace=True)
         joinedData.drop(joinedData[joinedData['state'] == 'live'].index, inplace=True)
         joinedData.drop(joinedData[joinedData['state'] == 'undefined'].index, inplace=True)
 
         joinedData['textDescription'] = joinedData['textDescription'].apply(transform_description)
+        # print(joinedData['textLength'])
+        joinedData['textLength'] = joinedData['textDescription'].apply(lambda x: len(x))
+        # print(joinedData['textLength'])
         joinedData["textReadingEase"] = joinedData['textDescription'].apply(calculate_ease)
         joinedData['imageTextRatio'] = joinedData.apply(
             lambda row: calculate_ratio(row['descriptionMediaNumber'], row['textLength']), axis=1)
