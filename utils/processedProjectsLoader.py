@@ -3,8 +3,9 @@ import pandas as pd
 
 processedData = []
 
-with open("../files/joinedTitles.json", "r", encoding='utf-8') as processedTitles:
-    data = json.load(processedTitles)
+with open("../files/joinedTitles.json", "rb") as processedTitles:
+    file_contents = processedTitles.read().decode('utf-8')
+    data = json.loads(file_contents)
     for project in data:
         if project.get("processed") is True:
             processedData.append(project)

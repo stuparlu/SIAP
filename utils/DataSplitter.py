@@ -1,6 +1,6 @@
 # Split the data
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import LabelEncoder, StandardScaler
 
 from utils.DataLoader import DataLoader
 
@@ -24,4 +24,9 @@ class DataSplitter(object):
         Y_train = Y_train[X_train.index.isin(X_train.index)]
         X_test = X_test.dropna()
         Y_test = Y_test[X_test.index.isin(X_test.index)]
+
+        scaler = StandardScaler()
+        X_train = scaler.fit_transform(X_train)
+        X_test = scaler.transform(X_test)
+
         return X_train, X_test, Y_train, Y_test
