@@ -3,8 +3,8 @@ from sklearn.metrics import classification_report
 import xgboost as xgb
 from sklearn.preprocessing import LabelEncoder
 
-from utils.DataSplitter import DataSplitter
-from utils.MultiCategoryDataLoader import MultiCategoryDataLoader
+from utils.dataWrangling.DataSplitter import DataSplitter
+from utils.dataWrangling.MultiCategoryDataLoader import MultiCategoryDataLoader
 
 
 joinedData = MultiCategoryDataLoader().get_data()

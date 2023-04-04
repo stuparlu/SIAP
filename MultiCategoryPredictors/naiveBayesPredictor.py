@@ -1,8 +1,8 @@
 from sklearn.metrics import classification_report
 from sklearn.naive_bayes import GaussianNB
 
-from utils.DataSplitter import DataSplitter
-from utils.MultiCategoryDataLoader import MultiCategoryDataLoader
+from utils.dataWrangling.DataSplitter import DataSplitter
+from utils.dataWrangling.MultiCategoryDataLoader import MultiCategoryDataLoader
 
 
 joinedData = MultiCategoryDataLoader().get_data()

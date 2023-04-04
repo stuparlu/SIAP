@@ -1,10 +1,8 @@
-import pandas as pd
-
-from utils.DataLoader import DataLoader
+from utils.dataWrangling.DataLoader import DataLoader
 
 mainData = DataLoader().get_data()
 # mainData.drop(mainData[mainData['state'] == 'successful'].index, inplace=True)
-mainData.drop(mainData[mainData['state'] == 'failed'].index, inplace=True)
+# mainData.drop(mainData[mainData['state'] == 'failed'].index, inplace=True)
 
 print(mainData.keys())
 

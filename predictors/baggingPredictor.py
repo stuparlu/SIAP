@@ -3,7 +3,7 @@ from sklearn.ensemble import BaggingClassifier
 from sklearn.metrics import classification_report
 from sklearn import preprocessing
 
-from utils.DataSplitter import DataSplitter
+from utils.dataWrangling.DataSplitter import DataSplitter
 
 X_train, X_test, Y_train, Y_test = DataSplitter().get_splitted_data()
 

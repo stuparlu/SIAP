@@ -1,7 +1,7 @@
 import xgboost as xgb
 from sklearn.metrics import classification_report
 from sklearn.preprocessing import LabelEncoder
-from utils.DataSplitter import DataSplitter
+from utils.dataWrangling.DataSplitter import DataSplitter
 import matplotlib.pyplot as plt
 
 X_train, X_test, Y_train, Y_test = DataSplitter().get_splitted_data()
