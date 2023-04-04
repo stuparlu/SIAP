@@ -19,7 +19,7 @@ class DataSplitter(object):
 
         X = joinedData.drop(columns=['state'])
         y = joinedData['state']
-        X_train, X_test, Y_train, Y_test = train_test_split(X, y, test_size=.1, random_state=0)
+        X_train, X_test, Y_train, Y_test = train_test_split(X, y, test_size=.3, random_state=0)
         X_train = X_train.dropna()
         Y_train = Y_train[X_train.index.isin(X_train.index)]
         X_test = X_test.dropna()
