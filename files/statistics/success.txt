@@ -1,100 +1,98 @@
-C:\Users\Luka\AppData\Local\Programs\Python\Python39\python.exe C:\Users\Luka\Desktop\SIAP\statistics\report.py
+"C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\python.exe" E:/Fax/SIAP/Projekat/SIAP/statistics/report.py
 Index(['category', 'main_category', 'currency', 'deadline', 'goal', 'state',
-       'country', 'hasHeaderVideo', 'videoLength', 'descriptionMediaNumber',
-       'textLength', 'textReadingEase', 'imageTextRatio', 'projectDuration'],
+       'country', 'videoLength', 'descriptionMediaNumber', 'textLength',
+       'textReadingEase', 'imageTextRatio', 'projectDuration'],
       dtype='object')
-Project categories: ['Publishing', 'Dance', 'Film & Video', 'Art', 'Journalism', 'Food', 'Theater', 'Photography', 'Design', 'Fashion', 'Comics', 'Crafts', 'Games', 'Music', 'Technology']
+Project categories: ['Photography', 'Fashion', 'Journalism', 'Dance', 'Theater', 'Comics', 'Design', 'Crafts', 'Music', 'Art', 'Food', 'Technology', 'Publishing', 'Games', 'Film & Video']
 --------------------------------------------------
 Project count by category:
-Publishing: 73
-Dance: 19
-Film & Video: 135
-Art: 81
-Journalism: 4
-Food: 43
-Theater: 42
-Photography: 25
-Design: 49
-Fashion: 44
-Comics: 37
-Crafts: 13
-Games: 97
-Music: 159
-Technology: 40
+Photography: 45
+Fashion: 100
+Journalism: 21
+Dance: 11
+Theater: 37
+Comics: 36
+Design: 70
+Crafts: 37
+Music: 131
+Art: 103
+Food: 88
+Technology: 118
+Publishing: 126
+Games: 112
+Film & Video: 213
 --------------------------------------------------
-Project Has header Video: [False, True]
---------------------------------------------------
-Project count by category:
-False: 170
-True: 691
---------------------------------------------------
-Project states: ['successful']
+Project states: ['failed']
 --------------------------------------------------
 Project count by state:
-successful: 861
+failed: 1248
 --------------------------------------------------
 Stats for goal:
 --------------------------------------------------
-Mean value: 9942.244157955864
-Median value: 3500.0
-Standard deviation value: 25484.54850375943
-Minimum value: 1.0
-Maximum value: 400000.0
-Variance value: 649462212.440467
+Mean value: 40101.46713141026
+Median value: 6000.0
+Standard deviation value: 320985.339178036
+Minimum value: 100.0
+Maximum value: 10000000.0
+Variance value: 103031587967.23882
 --------------------------------------------------
 Stats for videoLength:
 --------------------------------------------------
-Mean value: 138.15911730545878
-Median value: 130.0
-Standard deviation value: 111.32659475055738
+Mean value: 110.05288461538461
+Median value: 73.0
+Standard deviation value: 133.13655707763166
 Minimum value: 0
-Maximum value: 647
-Variance value: 12393.610698754828
+Maximum value: 1127
+Variance value: 17725.34283048547
 --------------------------------------------------
 Stats for descriptionMediaNumber:
 --------------------------------------------------
-Mean value: 8.54006968641115
-Median value: 3.0
-Standard deviation value: 13.532212541717186
+Mean value: 4.830929487179487
+Median value: 0.0
+Standard deviation value: 9.979502895672875
 Minimum value: 0
-Maximum value: 115
-Variance value: 183.1207762742079
+Maximum value: 173
+Variance value: 99.59047804474328
 --------------------------------------------------
 Stats for textLength:
 --------------------------------------------------
-Mean value: 4738.478513356562
-Median value: 3504.0
-Standard deviation value: 3891.407231690323
-Minimum value: 202
-Maximum value: 26520
-Variance value: 15143050.242851742
+Mean value: 3524.284455128205
+Median value: 2400.0
+Standard deviation value: 3313.502112601599
+Minimum value: 345
+Maximum value: 32697
+Variance value: 10979296.25021526
 --------------------------------------------------
 Stats for textReadingEase:
 --------------------------------------------------
-Mean value: 66.49891986062718
-Median value: 67.38
-Standard deviation value: 9.73991820410418
-Minimum value: 25.87
-Maximum value: 94.15
-Variance value: 94.86600662263999
+Mean value: 66.4175
+Median value: 67.35
+Standard deviation value: 10.282942790360725
+Minimum value: 27.56
+Maximum value: 93.03
+Variance value: 105.73891242983161
 --------------------------------------------------
 Stats for imageTextRatio:
 --------------------------------------------------
-Mean value: 640.5259720061702
-Median value: 285.32
-Standard deviation value: 1093.082242164202
+Mean value: 455.5652176850436
+Median value: 0.0
+Standard deviation value: 1117.3311889541935
 Minimum value: 0.0
-Maximum value: 10709.0
-Variance value: 1194828.7881347192
+Maximum value: 25761.0
+Variance value: 1248428.9858097916
 --------------------------------------------------
 Stats for projectDuration:
 --------------------------------------------------
-Mean value: 31.36004645760743
+Mean value: 34.19471153846154
 Median value: 29.0
-Standard deviation value: 11.616266942191789
+Standard deviation value: 12.735596455522217
 Minimum value: 5
 Maximum value: 90
-Variance value: 134.93765767225779
+Variance value: 162.19541707791007
 --------------------------------------------------
+Text reading ease lower than threshold count: 0
+Text length lower than threshold project count: 0
+Project duration lower than threshold project count: 0
+Projects with goal lower than desired: 0
 
 Process finished with exit code 0

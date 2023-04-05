@@ -63,5 +63,5 @@ class DataLoader(object):
         joinedData = joinedData.sample(frac=1, random_state=42).reset_index(drop=True)
 
         joinedData = joinedData.drop(columns=['ID','Unnamed: 0', 'backers', 'pledged', 'usd_goal_real', 'usd pledged',
-                                              'usd_pledged_real', 'name', 'textDescription', 'launched', 'hasHeaderVideo'])
+                                              'usd_pledged_real', 'name', 'textDescription', 'launched'])
         return joinedData

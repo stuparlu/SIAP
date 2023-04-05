@@ -1,0 +1,98 @@
+"C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\python.exe" E:/Fax/SIAP/Projekat/SIAP/statistics/report.py
+Index(['category', 'main_category', 'currency', 'deadline', 'goal', 'state',
+       'country', 'videoLength', 'descriptionMediaNumber', 'textLength',
+       'textReadingEase', 'imageTextRatio', 'projectDuration'],
+      dtype='object')
+Project categories: ['Food', 'Publishing', 'Comics', 'Technology', 'Games', 'Film & Video', 'Photography', 'Music', 'Theater', 'Design', 'Art', 'Dance', 'Crafts', 'Fashion', 'Journalism']
+--------------------------------------------------
+Project count by category:
+Food: 62
+Publishing: 110
+Comics: 54
+Technology: 57
+Games: 137
+Film & Video: 202
+Photography: 30
+Music: 230
+Theater: 62
+Design: 84
+Art: 119
+Dance: 28
+Crafts: 12
+Fashion: 55
+Journalism: 6
+--------------------------------------------------
+Project states: ['successful']
+--------------------------------------------------
+Project count by state:
+successful: 1248
+--------------------------------------------------
+Stats for goal:
+--------------------------------------------------
+Mean value: 9934.874375
+Median value: 4000.0
+Standard deviation value: 23724.37272998055
+Minimum value: 100.0
+Maximum value: 400000.0
+Variance value: 562845861.4310448
+--------------------------------------------------
+Stats for videoLength:
+--------------------------------------------------
+Mean value: 139.33894230769232
+Median value: 130.0
+Standard deviation value: 113.34542313562106
+Minimum value: 0
+Maximum value: 928
+Variance value: 12847.184945792982
+--------------------------------------------------
+Stats for descriptionMediaNumber:
+--------------------------------------------------
+Mean value: 8.75
+Median value: 3.0
+Standard deviation value: 13.665437645626708
+Minimum value: 0
+Maximum value: 115
+Variance value: 186.74418604651163
+--------------------------------------------------
+Stats for textLength:
+--------------------------------------------------
+Mean value: 4676.028044871795
+Median value: 3559.5
+Standard deviation value: 3745.180595174534
+Minimum value: 381
+Maximum value: 26385
+Variance value: 14026377.690471878
+--------------------------------------------------
+Stats for textReadingEase:
+--------------------------------------------------
+Mean value: 66.16792467948719
+Median value: 67.08
+Standard deviation value: 9.688343483724998
+Minimum value: 25.87
+Maximum value: 94.15
+Variance value: 93.86399945863663
+--------------------------------------------------
+Stats for imageTextRatio:
+--------------------------------------------------
+Mean value: 604.6565776520399
+Median value: 280.07539682539687
+Standard deviation value: 1020.7891929571831
+Minimum value: 0.0
+Maximum value: 10536.0
+Variance value: 1042010.5764581773
+--------------------------------------------------
+Stats for projectDuration:
+--------------------------------------------------
+Mean value: 31.40625
+Median value: 29.0
+Standard deviation value: 11.707509678787773
+Minimum value: 5
+Maximum value: 90
+Variance value: 137.06578287890937
+--------------------------------------------------
+Text reading ease lower than threshold count: 0
+Text length lower than threshold project count: 0
+Project duration lower than threshold project count: 0
+Projects with goal lower than desired: 0
+
+Process finished with exit code 0
