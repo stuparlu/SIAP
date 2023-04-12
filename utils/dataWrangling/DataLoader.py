@@ -54,14 +54,6 @@ class DataLoader(object):
         joinedData = joinedData.drop(joinedData[joinedData['textLength'] < 300].index)
         joinedData = joinedData.drop(joinedData[joinedData['textReadingEase'] < 25].index)
 
-        count_success = joinedData[joinedData['state'] == 'successful'].shape[0]
-        count_failed = joinedData[joinedData['state'] == 'failed'].shape[0]
-        min_count = min(count_success, count_failed)
-        df_success = joinedData[joinedData['state'] == 'successful'].sample(n=min_count, random_state=42)
-        df_failed = joinedData[joinedData['state'] == 'failed'].sample(n=min_count, random_state=42)
-        joinedData = pd.concat([df_success, df_failed])
-        joinedData = joinedData.sample(frac=1, random_state=42).reset_index(drop=True)
-
         joinedData = joinedData.drop(columns=['ID','Unnamed: 0', 'backers', 'pledged', 'usd_goal_real', 'usd pledged',
                                               'usd_pledged_real', 'name', 'textDescription', 'launched'])
         return joinedData

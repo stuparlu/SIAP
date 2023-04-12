@@ -3,23 +3,15 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import classification_report
 from utils.dataWrangling.DataSplitter import DataSplitter
 
-X_train, X_test, Y_train, Y_test = DataSplitter().get_splitted_data()
-
-param_grid = {'var_smoothing': [1e-9, 1e-8, 1e-7, 1e-6, 1e-5]}
-
+X_train, X_test, X_val, Y_val, Y_train, Y_test = DataSplitter().get_splitted_data()
 
 clf = GaussianNB()
 
 # Perform a grid search to find the best hyperparameters
-grid_search = GridSearchCV(estimator=clf, param_grid=param_grid, cv=5, n_jobs=-1)
-grid_search.fit(X_train, Y_train)
+param_grid = {'var_smoothing': [1e-10, 1e-9, 1e-8, 1e-7, 1e-6, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1, 1e0, 1e1, 1e2]}
+tunedClf = GridSearchCV(estimator=clf, param_grid=param_grid, cv=5, n_jobs=-1)
+tunedClf.fit(X_val, Y_val)
+print("Best hyperparameters:", tunedClf.best_params_)
 
-# Print the best hyperparameters
-print("Best hyperparameters:", grid_search.best_params_)
-
-clf = GaussianNB(**grid_search.best_params_)
-
-clf.fit(X_train, Y_train)
-
-Y_pred = clf.predict(X_test)
+Y_pred = tunedClf.predict(X_test)
 print(classification_report(Y_test, Y_pred))
