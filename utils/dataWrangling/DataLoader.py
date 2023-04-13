@@ -53,6 +53,7 @@ class DataLoader(object):
         joinedData = joinedData.drop(joinedData[joinedData['projectDuration'] < 5].index)
         joinedData = joinedData.drop(joinedData[joinedData['textLength'] < 300].index)
         joinedData = joinedData.drop(joinedData[joinedData['textReadingEase'] < 25].index)
+        joinedData = joinedData[(joinedData['hasHeaderVideo'] != True) | (joinedData['videoLength'] != 0)]
 
         joinedData = joinedData.drop(columns=['ID','Unnamed: 0', 'backers', 'pledged', 'usd_goal_real', 'usd pledged',
                                               'usd_pledged_real', 'name', 'textDescription', 'launched'])

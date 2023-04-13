@@ -55,3 +55,5 @@ print(f"Text reading ease lower than threshold count: {(mainData['textReadingEas
 print(f"Text length lower than threshold project count: {(mainData['textLength'] < 300).sum()}")
 print(f"Project duration lower than threshold project count: {(mainData['projectDuration'] < 5).sum()}")
 print(f"Projects with goal lower than desired: {(mainData['goal'] < 100).sum()}")
+count = len(mainData[(mainData['hasHeaderVideo'] == True) & (mainData['videoLength'] == 0)])
+print(f"Projects with invalid header video: {count}")

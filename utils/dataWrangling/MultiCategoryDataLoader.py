@@ -26,7 +26,7 @@ class MultiCategoryDataLoader(object):
         pass
     def get_data(self):
         # Load the data
-        mainData = pd.read_csv('../../files/refinedDataSet.csv', index_col=False)
+        mainData = pd.read_csv('../files/refinedDataSet.csv', index_col=False)
 
         joinedData = mainData
         joinedData.drop(joinedData[joinedData['state'] == 'canceled'].index, inplace=True)
@@ -35,6 +35,7 @@ class MultiCategoryDataLoader(object):
 
         # apply the function to all values in the 'City' column
         joinedData['textDescription'] = joinedData['textDescription'].apply(transform_description)
+        joinedData['textLength'] = joinedData['textDescription'].apply(lambda x: len(x))
         joinedData["textReadingEase"] = joinedData['textDescription'].apply(calculate_ease)
         joinedData['imageTextRatio'] = joinedData.apply(
             lambda row: calculate_ratio(row['descriptionMediaNumber'], row['textLength']), axis=1)
@@ -45,16 +46,17 @@ class MultiCategoryDataLoader(object):
         joinedData['launched'] = joinedData['launched'].apply(
             lambda x: int(time.mktime(time.strptime(x, '%Y-%m-%d %H:%M:%S'))))
         joinedData['deadline'] = joinedData['deadline'].apply(lambda x: int(time.mktime(time.strptime(x, '%Y-%m-%d'))))
-        joinedData = joinedData.drop('ID', axis=1)
-        joinedData = joinedData.drop('Unnamed: 0', axis=1)
 
-        joinedData = joinedData.drop('backers', axis=1)
-        joinedData = joinedData.drop('goal', axis=1)
-        joinedData = joinedData.drop('pledged', axis=1)
-        joinedData = joinedData.drop('usd pledged', axis=1)
-        joinedData = joinedData.drop('usd_pledged_real', axis=1)
-        joinedData = joinedData.drop(columns=['name', 'textDescription', 'launched'])
+        joinedData = joinedData.drop_duplicates(subset="name")
+        joinedData = joinedData.drop_duplicates(subset="ID")
 
+        joinedData = joinedData.drop(joinedData[joinedData['goal'] < 100].index)
+        joinedData = joinedData.drop(joinedData[joinedData['projectDuration'] < 5].index)
+        joinedData = joinedData.drop(joinedData[joinedData['textLength'] < 300].index)
+        joinedData = joinedData.drop(joinedData[joinedData['textReadingEase'] < 25].index)
+
+        joinedData = joinedData.drop(columns=['ID','Unnamed: 0', 'backers', 'pledged', 'usd_goal_real', 'usd pledged',
+                                              'usd_pledged_real', 'name', 'textDescription', 'launched'])
         dfs = {}
         for main_category, data in joinedData.groupby('main_category'):
             dfs[main_category] = data
