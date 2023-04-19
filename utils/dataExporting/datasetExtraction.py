@@ -18,5 +18,5 @@ print(len(valuesList))
 #
 # dict = {"data": values.tolist()}
 #
-# with open("titles.json", "w") as file1:
+# with open("titlesLuka.json", "w") as file1:
 #     file1.write(json.dumps(dict))

@@ -57,6 +57,20 @@ class MultiCategoryDataLoader(object):
 
         joinedData = joinedData.drop(columns=['ID','Unnamed: 0', 'backers', 'pledged', 'usd_goal_real', 'usd pledged',
                                               'usd_pledged_real', 'name', 'textDescription', 'launched'])
+
+        joinedData['main_category'] = joinedData['main_category'].replace('Crafts', 'tech_crafts')
+        joinedData['main_category'] = joinedData['main_category'].replace('Technology', 'tech_crafts')
+
+        joinedData['main_category'] = joinedData['main_category'].replace('Journalism', 'other_media')
+        joinedData['main_category'] = joinedData['main_category'].replace('Publishing', 'other_media')
+        joinedData['main_category'] = joinedData['main_category'].replace('Comics', 'other_media')
+        joinedData['main_category'] = joinedData['main_category'].replace('Photography', 'other_media')
+
+
+        joinedData['main_category'] = joinedData['main_category'].replace('Dance', 'other_entertainment')
+        joinedData['main_category'] = joinedData['main_category'].replace('Music', 'other_entertainment')
+        joinedData['main_category'] = joinedData['main_category'].replace('Theater', 'other_entertainment')
+
         dfs = {}
         for main_category, data in joinedData.groupby('main_category'):
             dfs[main_category] = data

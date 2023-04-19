@@ -5,17 +5,22 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.preprocessing import LabelEncoder
 from utils.dataWrangling.DataSplitter import DataSplitter
 import matplotlib.pyplot as plt
+# Rezultati
+# Best hyperparameters: {'colsample_bytree': 1.0, 'gamma': 1, 'learning_rate': 0.1, 'max_depth': 3, 'n_estimators': 100, 'reg_alpha': 0, 'reg_lambda': 0.1, 'subsample': 0.5}
 
-param_grid = {
-    'n_estimators': [50, 100, 200],
-    'max_depth': [3, 5, 7],
-    'learning_rate': [0.01, 0.1, 0.5],
-    'subsample': [0.5, 0.75, 1.0],
-    'colsample_bytree': [0.5, 0.75, 1.0],
-    'reg_alpha': [0, 0.1, 1],
-    'reg_lambda': [0, 0.1, 1],
-    'gamma': [0.0, 0.1, 0.5, 1],
-}
+param_grid = {'colsample_bytree': [1.0], 'gamma': [1], 'learning_rate': [0.1], 'max_depth': [3], 'n_estimators': [100], 'reg_alpha': [0], 'reg_lambda': [0.1], 'subsample': [0.5]}
+
+
+# param_grid = {
+#     'n_estimators': [50, 100, 200],
+#     'max_depth': [3, 5, 7],
+#     'learning_rate': [0.01, 0.1, 0.5],
+#     'subsample': [0.5, 0.75, 1.0],
+#     'colsample_bytree': [0.5, 0.75, 1.0],
+#     'reg_alpha': [0, 0.1, 1],
+#     'reg_lambda': [0, 0.1, 1],
+#     'gamma': [0.0, 0.1, 0.5, 1],
+# }
 
 X_train, X_test, X_val, Y_val, Y_train, Y_test = DataSplitter().get_splitted_data()
 

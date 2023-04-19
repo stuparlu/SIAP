@@ -1,6 +1,6 @@
 import json
 
-with open("../files/titles.json", "r") as file1:
+with open("../files/titlesLuka.json", "r") as file1:
     data = json.load(file1)
     sorted = []
     for title in data['data']:
