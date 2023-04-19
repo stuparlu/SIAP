@@ -14,10 +14,19 @@ for key in joinedData:
     base_estimator = svm.SVC(kernel='rbf')
     clf = BaggingClassifier(estimator=base_estimator)
 
+    # param_grid = {
+    #     'n_estimators': [10, 20, 30],
+    #     'max_samples': [0.5, 1.0]
+    # }
     param_grid = {
-        'n_estimators': [10, 20, 30],
-        'max_samples': [0.5, 1.0]
+        'n_estimators': [10, 50, 100],
+        'max_samples': [0.5, 1.0],
+        'max_features': [0.5, 1.0],
+        'bootstrap': [True, False],
+        'bootstrap_features': [True, False],
+        'n_jobs': [-1]
     }
+
     tunedClf = GridSearchCV(estimator=clf, param_grid=param_grid, cv=5, n_jobs=-1)
     tunedClf.fit(X_val, Y_val)
     print(f"Best hyperparameters for category: {key} --> {tunedClf.best_params_}")

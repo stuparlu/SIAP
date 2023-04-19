@@ -13,13 +13,25 @@ for key in joinedData:
     clf = RandomForestClassifier(random_state=42)
     clf.fit(X_train, Y_train)
 
+    # param_grid = {
+    #     'n_estimators': [200, 150, 125, 100, 75, 50],
+    #     'max_depth': [None, 1, 2],
+    #     'min_samples_split': [2, 3, 6, 7],
+    #     'min_samples_leaf': [1, 2, 3, 4],
+    #     'random_state': [42]
+    # }
+
     param_grid = {
-        'n_estimators': [200, 150, 125, 100, 75, 50],
-        'max_depth': [None, 1, 2],
-        'min_samples_split': [2, 3, 6, 7],
-        'min_samples_leaf': [1, 2, 3, 4],
-        'random_state': [42]
+        'n_estimators': [100, 200, 500],
+        'criterion': ['gini', 'entropy'],
+        'max_depth': [None, 5, 10],
+        'min_samples_split': [2, 5, 10],
+        'min_samples_leaf': [1, 2, 4],
+        'max_features': ['sqrt', 'log2', None],
+        'bootstrap': [True, False],
+        'class_weight': [None, 'balanced']
     }
+
     tunedClf = GridSearchCV(estimator=clf, param_grid=param_grid, cv=5, n_jobs=-1)
     tunedClf.fit(X_val, Y_val)
     print(f"Best hyperparameters for category: {key} --> {tunedClf.best_params_}")

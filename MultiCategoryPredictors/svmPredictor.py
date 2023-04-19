@@ -13,11 +13,25 @@ for key in joinedData:
     clf = svm.SVC()
     clf.fit(X_train, Y_train)
 
+    # param_grid = {
+    #     'C': [1, 2, 5, 10, 15],
+    #     'kernel': ['rbf', 'poly', 'sigmoid'],
+    #     'gamma': ['scale', 'auto']
+    # }
+
     param_grid = {
-        'C': [1, 2, 5, 10, 15],
-        'kernel': ['rbf', 'poly', 'sigmoid'],
-        'gamma': ['scale', 'auto']
+        'C': [0.1, 1, 10],
+        'kernel': ['linear', 'rbf', 'poly'],
+        'degree': [2, 3],
+        'gamma': ['scale', 'auto'],
+        'shrinking': [True, False],
+        'probability': [True, False],
+        'tol': [1e-3, 1e-4],
+        'class_weight': [None, 'balanced'],
+        'max_iter': [1000, 5000],
+        'verbose': [0, 1, 2]
     }
+
     tunedClf = GridSearchCV(estimator=clf, param_grid=param_grid, cv=5, n_jobs=-1)
     tunedClf.fit(X_val, Y_val)
     print(f"Best hyperparameters for category: {key} --> {tunedClf.best_params_}")

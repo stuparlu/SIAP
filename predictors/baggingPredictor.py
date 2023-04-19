@@ -4,9 +4,18 @@ from sklearn.metrics import classification_report
 from sklearn import preprocessing
 from sklearn.model_selection import GridSearchCV
 
+# param_grid = {
+#     'n_estimators': [10, 20, 30],
+#     'max_samples': [0.5, 1.0]
+# }
+
 param_grid = {
-    'n_estimators': [10, 20, 30],
-    'max_samples': [0.5, 1.0]
+    'n_estimators': [10, 50, 100],
+    'max_samples': [0.5, 1.0],
+    'max_features': [0.5, 1.0],
+    'bootstrap': [True, False],
+    'bootstrap_features': [True, False],
+    'n_jobs': [-1]
 }
 
 from utils.dataWrangling.DataSplitter import DataSplitter
